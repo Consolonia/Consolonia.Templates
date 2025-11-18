@@ -1,0 +1,49 @@
+<Solution>
+  <Folder Name="/Experimental/">
+    <Project Path="Experimental/Avalonia.PreviewHost/Avalonia.PreviewHost.csproj" />
+    <Project Path="Experimental/Consolonia.Designer/Consolonia.Designer.csproj" />
+    <Project Path="Experimental/Consolonia.Editor/Consolonia.Editor.csproj" />
+    <Project Path="Tools/Sandbox/Sandbox.csproj" />
+  </Folder>
+  <Folder Name="/RepoRoot/">
+    <File Path="../.gitignore" />
+    <File Path="../contributing.md" />
+    <File Path="../Directory.Build.props" />
+    <File Path="../Directory.Core.Build.props" />
+    <File Path="../LICENSE" />
+    <File Path="../readme.md" />
+  </Folder>
+  <Folder Name="/RepoRoot/.github/" />
+  <Folder Name="/RepoRoot/.github/workflows/">
+    <File Path="../.github/workflows/dismiss-approvals.yml" />
+    <File Path="../.github/workflows/editorconfig.yml" />
+    <File Path="../.github/workflows/general_build.yml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="../.editorconfig" />
+    <File Path="readme.md" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/Consolonia.Core.Tests/Consolonia.Core.Tests.csproj" />
+    <Project Path="Tests/Consolonia.Gallery.Tests/Consolonia.Gallery.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Tools/">
+    <Project Path="Tools/Consolonia.PreviewHost/Consolonia.PreviewHost.csproj" />
+    <Project Path="Tools/Consolonia.Templates/Consolonia.Templates.csproj" />
+    <Project Path="Tools/Consolonia.Templates/ConsoloniaAppTemplate/ConsoloniaAppTemplate.csproj" />
+  </Folder>
+  <Project Path="Consolonia.AvaloniaEdit/Consolonia.AvaloniaEdit.csproj" />
+  <Project Path="Consolonia.Blazor/Consolonia.Blazor.csproj" />
+  <Project Path="Consolonia.Controls/Consolonia.Controls.csproj" />
+  <Project Path="Consolonia.Core/Consolonia.Core.csproj" />
+  <Project Path="Consolonia.Fonts/Consolonia.Fonts.csproj" />
+  <Project Path="Consolonia.Gallery/Consolonia.Gallery.csproj" />
+  <Project Path="Consolonia.GuiCS/Consolonia.GuiCS.csproj" />
+  <Project Path="Consolonia.NUnit/Consolonia.NUnit.csproj" />
+  <Project Path="Consolonia.PlatformSupport/Consolonia.PlatformSupport.csproj" />
+  <Project Path="Consolonia.Themes/Consolonia.Themes.csproj" />
+  <Project Path="Consolonia/Consolonia.csproj" />
+  <Project Path="Example.Blazor.Components/Example.Blazor.Components.csproj" />
+  <Project Path="Example.Blazor/Example.Blazor.csproj" />
+  <Project Path="Experimental/Edit.NET/Edit.NET.csproj" />
+</Solution>
