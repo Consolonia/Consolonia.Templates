@@ -8,8 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Consolonia"
-                          Version="11.3.*-beta.*" />
+        <PackageReference Include="Consolonia" Version="11.3.9" />
     </ItemGroup>
 
 </Project>
