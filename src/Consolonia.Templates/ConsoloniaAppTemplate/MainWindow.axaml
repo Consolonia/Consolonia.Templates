@@ -1,11 +1,16 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:ConsoloniaAppTemplate.ViewModels"
         x:Class="ConsoloniaAppTemplate.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
         RequestedThemeVariant="Dark"
         Title="Consolonia">
     <StackPanel VerticalAlignment="Center"
                 HorizontalAlignment="Center">
-        <TextBlock Text="Welcome to Consolonia!" />
+        <TextBlock Text="{Binding Greeting}" />
+        <Button Content="_Click me"
+                Command="{Binding IncrementCommand}" />
+        <TextBlock Text="{Binding ClickCount, StringFormat='Clicked {0} time(s)'}" />
         <Button Content="_Exit"
                 Click="OnExit" />
     </StackPanel>
