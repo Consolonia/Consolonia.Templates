@@ -1,7 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Core.Build.props', '$(MSBuildThisFileDirectory)../'))" />
     <PropertyGroup>
         <NoPackageAnalysis>true</NoPackageAnalysis>
+        <!-- The template ships a .gitignore; NuGet drops dot-files without this. -->
+        <NoDefaultExcludes>true</NoDefaultExcludes>
     </PropertyGroup>
     
     <PropertyGroup>
@@ -9,13 +11,32 @@
         <Authors>https://github.com/jinek/Consolonia/graphs/contributors</Authors>
         <PackageType>Template</PackageType>
         <PackageId>Consolonia.Templates</PackageId>
-        <Description>Templates for creating a consolonia application.</Description>
-        <PackageTags>dotnet-new;templates;console</PackageTags>
+        <!-- Keep in sync with "description" in ConsoloniaAppTemplate/.template.config/template.json -->
+        <Description>Template for creating a new dotnet TUI using Consolonia</Description>
+        <!-- Keep in sync with "classifications" in ConsoloniaAppTemplate/.template.config/template.json -->
+        <PackageTags>dotnet-new;templates;console;tui;terminal;consolonia;avalonia</PackageTags>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
         <IsPackable>true</IsPackable>
     </PropertyGroup>
+
+    <!--
+        This package's version tracks Consolonia's own ($(ConsoloniaVersion), set in
+        Directory.Build.props), so the Consolonia version the template scaffolds must stay on
+        that same 3-part base. Both files are synced from Consolonia/Consolonia independently,
+        which is exactly how they drifted apart before; this turns a silent mismatch into a
+        build error.
+    -->
+    <Target Name="VerifyTemplateConsoloniaVersion" BeforeTargets="Build;Pack">
+        <PropertyGroup>
+            <_TemplateProject>$(MSBuildThisFileDirectory)ConsoloniaAppTemplate\ConsoloniaAppTemplate.csproj</_TemplateProject>
+            <_TemplateProjectText>$([System.IO.File]::ReadAllText('$(_TemplateProject)'))</_TemplateProjectText>
+            <_ExpectedReference>Include=&quot;Consolonia&quot; Version=&quot;$(ConsoloniaVersion).</_ExpectedReference>
+        </PropertyGroup>
+        <Error Condition="!$(_TemplateProjectText.Contains('$(_ExpectedReference)'))"
+               Text="$(_TemplateProject) must reference Consolonia at a full 4-part version starting with '$(ConsoloniaVersion).' (ConsoloniaVersion in Directory.Build.props). Update whichever of the two is stale." />
+    </Target>
 
     <ItemGroup>
         <Compile Remove="**\*" />
