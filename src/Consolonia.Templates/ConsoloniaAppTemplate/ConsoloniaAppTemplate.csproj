@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Consolonia" Version="12.1.4" />
+        <PackageReference Include="Consolonia" Version="12.1.4.15" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     </ItemGroup>
 
