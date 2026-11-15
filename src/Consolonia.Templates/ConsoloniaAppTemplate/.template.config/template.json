@@ -2,12 +2,18 @@
     "$schema": "http://json.schemastore.org/template",
     "author": "https://github.com/jinek/Consolonia/graphs/contributors",
     "classifications": [
-        "console"
+        "Console",
+        "TUI",
+        "Terminal",
+        "Consolonia",
+        "Avalonia"
     ],
     "identity": "Consolonia.Application",
     "name": "Consolonia Application",
+    "description": "Template for creating a new dotnet TUI using Consolonia",
     "shortName": "consolonia.app",
     "sourceName": "ConsoloniaAppTemplate",
+    "preferNameDirectory": true,
     "tags": {
         "language": "C#",
         "type": "project"
